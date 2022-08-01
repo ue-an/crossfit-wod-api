@@ -21,17 +21,17 @@ const getOneMember = (memberId) => {
  }
 };
 
-const createNewMember = () => {
- return;
-}
+// const createNewMember = () => {
+//  return;
+// }
 
-const updateOneMember = () => {
- return;
-}
+// const updateOneMember = () => {
+//  return;
+// }
 
-const deleteOneMember = () => {
- return;
-}
+// const deleteOneMember = () => {
+//  return;
+// }
 
 module.exports = {
  getAllMembers,

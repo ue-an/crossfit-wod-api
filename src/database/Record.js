@@ -21,13 +21,17 @@ const getOneRecord = (recordId) => {
   }
   return record;
  } catch (error) {
-  throw{ status: error?.status, message: error?.message || error };
+  throw{ status: error?.status || 500, message: error?.message || error };
  }
 }
 
 const createNewRecord = (newRecord) => {
- DB.records.push(newRecord);
+ try {
+  DB.records.push(newRecord);
  return newRecord;
+ } catch (error) {
+  throw { status: error?.status || 500, message: error?.message || error };
+}
 }
 
 module.exports = {
