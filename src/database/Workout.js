@@ -47,7 +47,8 @@ const updateOneWorkout = (workoutId, changes) => {
   const indexForUpdate = DB.workouts.findIndex(
    (workout) => workout.id === workoutId
    );
-   if (indexForUpdate === -1) {
+   const isWorkoutNameExisted = DB.workouts.findIndex((workout) => workout.name === changes.name) > -1;
+   if (isWorkoutNameExisted) {
     throw{
      status: 400,
      message: `Workout with the name '${changes.name}' already exists`,
@@ -56,7 +57,7 @@ const updateOneWorkout = (workoutId, changes) => {
    const updatedWorkout = {
     ...DB.workouts[indexForUpdate],
     ...changes,
-    updatedAt: new Date().toLocaleString("en-US", { timeZone: "UTC"}),
+    updatedAt: new Date().toLocaleString("en-US", { timeZone: "UTC" }),
    };
    DB.workouts[indexForUpdate] = updatedWorkout;
    saveToDatabase(DB);
