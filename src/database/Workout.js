@@ -87,7 +87,7 @@ const deleteOneWorkout = (workoutId) => {
 
 const getRecordForWorkout = (workoutId) => {
   try {
-   const record = DB.records.filter((record) => record.workout === workoutId);
+   const record = DB.records.find((record) => record.workout === workoutId);
    if (!record) {
     throw {
      status: 400,

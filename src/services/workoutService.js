@@ -53,7 +53,7 @@ const deleteOneWorkout = (workoutId) => {
 
 const getRecordForWorkout = (workoutId) => {
  try {
-  const record = Record.getRecordForWorkout(workoutId);
+  const record = Workout.getRecordForWorkout(workoutId);
  return record;
  } catch (error) {
   throw error;

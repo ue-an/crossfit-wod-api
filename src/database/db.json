@@ -157,6 +157,13 @@
       "record": "145 reps",
       "memberId": "11817fb1-03a1-4b4a-8d27-854ac893cf41",
       "member": "/members/:memberId"
+    },
+    {
+      "workout": "a2628f7a-b062-4fdb-8d2f-ed8a37f36f0e",
+      "record": "3000 reps",
+      "memberId": "12a410bc-849f-4e7e-bfc8-4ef283ee4b19",
+      "member": "/members/:memberId",
+      "id": "2acc2377-373b-401b-b338-5491e76aceb2"
     }
   ]
 }

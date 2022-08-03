@@ -127,8 +127,16 @@ const getRecordForWorkout = (req, res) => {
    },
   });
  }
- const record = workoutService.getRecordForWorkout(workoutId);
+ try {
+  const record = workoutService.getRecordForWorkout(workoutId);
  res.send({status: "OK", data: record});
+ } catch (error) {
+  res.status(error?.status || 500).send({
+   data: {
+    error: error?.message || error
+   }
+  });
+ }
 }
 
 module.exports = {
